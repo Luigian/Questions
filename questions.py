@@ -1,5 +1,6 @@
 import nltk
 import sys
+import os
 
 FILE_MATCHES = 1
 SENTENCE_MATCHES = 1
@@ -13,6 +14,9 @@ def main():
 
     # Calculate IDF values across files
     files = load_files(sys.argv[1])
+    print(files["artificial_intelligence.txt"])
+    for key in files:
+        print(key)
     file_words = {
         filename: tokenize(files[filename])
         for filename in files
@@ -48,7 +52,13 @@ def load_files(directory):
     Given a directory name, return a dictionary mapping the filename of each
     `.txt` file inside that directory to the file's contents as a string.
     """
-    raise NotImplementedError
+    files = dict()
+    for filename in os.listdir(directory):
+        with open(os.path.join(directory, filename)) as f:
+            files[filename] = f.read()
+            
+    return files
+    
 
 
 def tokenize(document):
