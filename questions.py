@@ -1,7 +1,8 @@
 import nltk
 import sys
 import os
-import string 
+import string
+from nltk.corpus import stopwords
 
 FILE_MATCHES = 1
 SENTENCE_MATCHES = 1
@@ -15,17 +16,13 @@ def main():
 
     # Calculate IDF values across files
     files = load_files(sys.argv[1])
-    # print(files["artificial_intelligence.txt"])
-    # for key in files:
-    #     print(key)
     file_words = {
         filename: tokenize(files[filename])
         for filename in files
     }
-    print(file_words["artificial_intelligence.txt"])
-    # print(file_words["artificial_intelligence.txt"][0])
-    for key in files:
-        print(key)
+    print(file_words)
+    sys.exit()
+
     file_idfs = compute_idfs(file_words)
 
     # Prompt user for query
@@ -65,23 +62,24 @@ def load_files(directory):
     return files
     
 
-
 def tokenize(document):
     """
     Given a document (represented as a string), return a list of all of the
-    words in that document, in order.
-
-    Process document by coverting all words to lowercase, and removing any
-    punctuation or English stopwords.
+    words in that document, in order. Process document by coverting all words 
+    to lowercase, and removing any punctuation or English stopwords.
     """
-    contents = [
-                word.lower() for word in
-                nltk.word_tokenize(document)
-                # if word.isalpha()
-            ]
-    contents.sort()
+    punctuations = """"!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~–—"""
+    for c in document:
+        if c in punctuations:
+            document = document.replace(c, " ")
     
-    return contents
+    tokens = []
+    for word in nltk.word_tokenize(document.lower()):
+        if word not in stopwords.words('english'):
+            tokens.extend([word])
+    tokens.sort()
+    
+    return tokens
 
 
 def compute_idfs(documents):
