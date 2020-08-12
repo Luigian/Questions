@@ -1,6 +1,7 @@
 import nltk
 import sys
 import os
+import string 
 
 FILE_MATCHES = 1
 SENTENCE_MATCHES = 1
@@ -14,13 +15,17 @@ def main():
 
     # Calculate IDF values across files
     files = load_files(sys.argv[1])
-    print(files["artificial_intelligence.txt"])
-    for key in files:
-        print(key)
+    # print(files["artificial_intelligence.txt"])
+    # for key in files:
+    #     print(key)
     file_words = {
         filename: tokenize(files[filename])
         for filename in files
     }
+    print(file_words["artificial_intelligence.txt"])
+    # print(file_words["artificial_intelligence.txt"][0])
+    for key in files:
+        print(key)
     file_idfs = compute_idfs(file_words)
 
     # Prompt user for query
@@ -69,7 +74,14 @@ def tokenize(document):
     Process document by coverting all words to lowercase, and removing any
     punctuation or English stopwords.
     """
-    raise NotImplementedError
+    contents = [
+                word.lower() for word in
+                nltk.word_tokenize(document)
+                # if word.isalpha()
+            ]
+    contents.sort()
+    
+    return contents
 
 
 def compute_idfs(documents):
