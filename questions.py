@@ -3,6 +3,7 @@ import sys
 import os
 import string
 from nltk.corpus import stopwords
+import math
 
 FILE_MATCHES = 1
 SENTENCE_MATCHES = 1
@@ -20,10 +21,12 @@ def main():
         filename: tokenize(files[filename])
         for filename in files
     }
-    print(file_words)
-    sys.exit()
+    # print(file_words)
 
     file_idfs = compute_idfs(file_words)
+   
+    print(file_idfs["artificial"])
+    sys.exit()
 
     # Prompt user for query
     query = set(tokenize(input("Query: ")))
@@ -85,12 +88,20 @@ def tokenize(document):
 def compute_idfs(documents):
     """
     Given a dictionary of `documents` that maps names of documents to a list
-    of words, return a dictionary that maps words to their IDF values.
-
-    Any word that appears in at least one of the documents should be in the
-    resulting dictionary.
+    of words, return a dictionary that maps words to their IDF values. Any word
+    that appears in at least one of the documents should be in the resulting dictionary.
     """
-    raise NotImplementedError
+    words = set()
+    for filename in documents:
+        words.update(documents[filename])
+    
+    idfs = dict()
+    for word in words:
+        f = sum(word in documents[filename] for filename in documents)
+        idf = math.log(len(documents) / f)
+        idfs[word] = idf
+    
+    return idfs
 
 
 def top_files(query, files, idfs, n):
