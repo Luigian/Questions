@@ -24,15 +24,16 @@ def main():
     # print(file_words)
 
     file_idfs = compute_idfs(file_words)
-   
-    print(file_idfs["artificial"])
-    sys.exit()
+    # print(file_idfs)
 
     # Prompt user for query
     query = set(tokenize(input("Query: ")))
+    # print(query)
 
     # Determine top file matches according to TF-IDF
     filenames = top_files(query, file_words, file_idfs, n=FILE_MATCHES)
+    print(filenames)
+    sys.exit()
 
     # Extract sentences from top files
     sentences = dict()
@@ -111,7 +112,15 @@ def top_files(query, files, idfs, n):
     to their IDF values), return a list of the filenames of the the `n` top
     files that match the query, ranked according to tf-idf.
     """
-    raise NotImplementedError
+    tfidfs = dict()
+    for filename in files:
+        tfidfs[filename] = sum(files[filename].count(word) * idfs[word] 
+            for word in query if word in idfs)
+
+    tfidfs_sort = sorted(tfidfs.items(), key=lambda x: x[1], reverse=True)
+    filenames = [i[0] for i in tfidfs_sort][:n]
+
+    return filenames
 
 
 def top_sentences(query, sentences, idfs, n):
