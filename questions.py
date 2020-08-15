@@ -33,7 +33,6 @@ def main():
     # Determine top file matches according to TF-IDF
     filenames = top_files(query, file_words, file_idfs, n=FILE_MATCHES)
     print(filenames)
-    sys.exit()
 
     # Extract sentences from top files
     sentences = dict()
@@ -43,9 +42,12 @@ def main():
                 tokens = tokenize(sentence)
                 if tokens:
                     sentences[sentence] = tokens
+    print(sentences)
 
     # Compute IDF values across sentences
     idfs = compute_idfs(sentences)
+    print(idfs)
+    sys.exit()
 
     # Determine top sentence matches
     matches = top_sentences(query, sentences, idfs, n=SENTENCE_MATCHES)
@@ -131,7 +133,11 @@ def top_sentences(query, sentences, idfs, n):
     the query, ranked according to idf. If there are ties, preference should
     be given to sentences that have a higher query term density.
     """
-    raise NotImplementedError
+    idfs_totals = dict()
+    for sentence in sentences:
+        idfs_totals[sentence] = sum(idfs[word] for word in query if word in sentences[sentence])
+    
+    
 
 
 if __name__ == "__main__":
