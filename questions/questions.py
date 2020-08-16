@@ -14,20 +14,23 @@ def main():
     # Check command-line arguments
     if len(sys.argv) != 2:
         sys.exit("Usage: python questions.py corpus")
-
+    
     # Calculate IDF values across files
+    print("Loading data...")
     files = load_files(sys.argv[1])
+    print("Extracting words from corpus...")
     file_words = {
         filename: tokenize(files[filename])
         for filename in files
     }
-
+    print("Calculating inverse document frequencies...")
     file_idfs = compute_idfs(file_words)
 
     # Prompt user for query
     query = set(tokenize(input("Query: ")))
 
     # Determine top file matches according to TF-IDF
+    print("Calculating top file matches...")
     filenames = top_files(query, file_words, file_idfs, n=FILE_MATCHES)
 
     # Extract sentences from top files
@@ -43,6 +46,7 @@ def main():
     idfs = compute_idfs(sentences)
 
     # Determine top sentence matches
+    print("Calculating top sentences matches...")
     matches = top_sentences(query, sentences, idfs, n=SENTENCE_MATCHES)
     for match in matches:
         print(match)
