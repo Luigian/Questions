@@ -6,7 +6,7 @@
 
 Question Answering (QA) is a field within natural language processing focused on designing systems that can answer questions. 
 
-This is a question answering system based on inverse document frequency that will perform two tasks: document retrieval and passage retrieval.
+This is a question answering system based on **inverse document frequency** that will perform two tasks: document retrieval and passage retrieval.
 
 First, the system will have access to a corpus of text documents. When presented with a query (a question in English asked by the user), document retrieval will first identify which document(s) are most relevant to the query. To find the most relevant documents, we’ll use tf-idf to rank documents based both on term frequency for words in the query as well as inverse document frequency for words in the query. 
 
