@@ -1,52 +1,16 @@
 # Questions
-### An AI to answer questions
+
+## An AI to answer questions
 
 <img src="resources/images/questions_output.jpg" width="1000">
 
+Question Answering (QA) is a field within natural language processing focused on designing systems that can answer questions. 
 
-Question Answering (QA) is a field within natural language processing focused on designing systems that can answer questions.
-we’ll design a very simple question answering system based on inverse document frequency.
+This is a question answering system based on inverse document frequency. This system will perform two tasks: document retrieval and passage retrieval.
 
-Our question answering system will perform two tasks: document retrieval and passage retrieval. Our system will have access to a corpus of text documents. When presented with a query (a question in English asked by the user), document retrieval will first identify which document(s) are most relevant to the query. Once the top documents are found, the top document(s) will be subdivided into passages (in this case, sentences) so that the most relevant passage to the question can be determined.
+The system will have access to a corpus of text documents. When presented with a query (a question in English asked by the user), document retrieval will first identify which document(s) are most relevant to the query. To find the most relevant documents, we’ll use tf-idf to rank documents based both on term frequency for words in the query as well as inverse document frequency for words in the query. 
 
-How do we find the most relevant documents and passages? To find the most relevant documents, we’ll use tf-idf to rank documents based both on term frequency for words in the query as well as inverse document frequency for words in the query. Once we’ve found the most relevant documents, there many possible metrics for scoring passages, but we’ll use a combination of inverse document frequency and a query term density measure (described in the Specification).
-
-## Highlights
-
-* The goal of this project was to write an AI to parse sentences, print their syntax tree, and extract noun phrases.
-
-* A common task in natural language processing is parsing, the process of determining the structure of a sentence. 
-
-* Knowing the structure of a sentence can help a computer to extract information out of it, like the noun phrases, which is useful to get an understanding for what the sentence is about.
-
-* The context-free grammar formalism allow us to parse English sentences via a technique called Rewriting Rules, which means replacing one symbol with other symbol or symbols.
-
-## Rewriting Rules Guide
-
-|Non-Terminal Symbol|Word or Phrase Class|
-|----|-----------|
-|`S`|Sentence|
-|`N`|Noun|
-|`V`|Verb|
-|`Det`|Determiner|
-|`Adj`|Adjective|
-|`Adv`|Adverb|
-|`P`|Preposition|
-|`Conj`|Conjugation|
-|`NP`|Noun Phrase|
-|`VP`|Verb Phrase|
-|`AdjP`|Adjective Phrase|
-|`AdvP`|Adverb Phrase|
-|`PP`|Preposition Phrase|
-|`ConjP`|Conjugation Phrase|
-
-* By defining a set of rules, the CYK algorithm, used by the `parse` method from the nltk library, is able to take a sentence (terminal symbols) and figure out the syntax tree (the structure of the non-terminal symbols).
-
-* According to how well the rules are established, this algorithm can prevent the generation of non-well formed sentences, but it can't detect some sentences that may not be semantically well-formed (non-sense sentences).
-
-* The more rules are implemented, the more complex sentences it can parse.
-
-* Since English grammar is inherently ambiguous, the same sentences can produce more than one syntax structure.
+Once the top documents are found, passage retrieval will subdivide the top document(s) into passages (in this case, sentences) and score them using a combination of inverse document frequency and a query term density measure, so that the most relevant passage to the question can be determined.
 
 ## Implementation
 
