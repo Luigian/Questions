@@ -1,8 +1,9 @@
 # Questions
+### An AI to answer questions
 
 <img src="resources/images/questions_output.jpg" width="1000">
 
-An AI to answer questions
+
 Question Answering (QA) is a field within natural language processing focused on designing systems that can answer questions.
 we’ll design a very simple question answering system based on inverse document frequency.
 
