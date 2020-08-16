@@ -1,6 +1,6 @@
 # Questions
 
-<img src="resources/questions_output.jpg" width="1000">
+<img src="resources/images/questions_output.jpg" width="1000">
 
 ## Highlights
 
