@@ -1,6 +1,6 @@
-# AI Parser
+# Questions
 
-<img src="resources/aiparser_output.jpg" width="1000">
+<img src="resources/questions_output.jpg" width="1000">
 
 ## Highlights
 
@@ -68,28 +68,28 @@ The following methods are implemented inside this function in order to manipulat
 
 ## Resources
 * [CS50 AI Language Lecture][cs50 lecture]
-* [Analyzing English Grammar][analyzing english grammar]
-* [NLTK 3.5 documentation][nltk documentation]
+* [How to Clean Text for Machine Learning with Python][clean text]
+* [Python | Nested Dictionary][nested dictionary]
+* [Breaking Ties: Second Sorting][second sorting]
 
 ## Installation
-Inside of the `ai_parser` directory:
+Inside of the `questions` directory:
 
 * `pip3 install -r requirements.txt` | Install this project’s dependency: nltk for natural language processing.
 
 ## Usage
 To parse a sentence:
 
-* `python3 parser.py sentences/10.txt` | Accepts the sentence via a file.
-
-* `python3 parser.py` | Accepts the sentence via user input.
+* `python3 questions.py corpus` | Accepts the sentence via a file.
 
 ## Credits
 [*Luis Sanchez*][linkedin] 2020.
 
 A project from the course [CS50's Introduction to Artificial Intelligence with Python 2020][cs50 ai] from HarvardX.
 
-[cs50 lecture]: https://youtu.be/_hAVVULrZ0Q?t=629
-[analyzing english grammar]: http://www.csun.edu/~galasso/completehandbook.htm
-[nltk documentation]: https://www.nltk.org/_modules/nltk/tree.html
+[cs50 lecture]: https://youtu.be/_hAVVULrZ0Q?t=4158
+[clean text]: https://machinelearningmastery.com/clean-text-machine-learning-python/
+[nested dictionary]: https://www.geeksforgeeks.org/python-nested-dictionary/
+[second sorting]: https://runestone.academy/runestone/books/published/fopp/Sorting/SecondarySortOrder.html
 [linkedin]: https://www.linkedin.com/in/luis-sanchez-13bb3b189/
 [cs50 ai]: https://cs50.harvard.edu/ai/2020/
