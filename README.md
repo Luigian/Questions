@@ -78,9 +78,9 @@ Inside of the `questions` directory:
 * `pip3 install -r requirements.txt` | Install this project’s dependency: nltk for natural language processing.
 
 ## Usage
-To parse a sentence:
+Inside of the `questions` directory:
 
-* `python3 questions.py corpus` | Accepts the sentence via a file.
+* `python3 questions.py corpus` | Accepts the corpus of documents via a directory, and the query via user input.
 
 ## Credits
 [*Luis Sanchez*][linkedin] 2020.
