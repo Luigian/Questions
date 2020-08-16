@@ -21,18 +21,14 @@ def main():
         filename: tokenize(files[filename])
         for filename in files
     }
-    # print(file_words)
 
     file_idfs = compute_idfs(file_words)
-    # print(file_idfs)
 
     # Prompt user for query
     query = set(tokenize(input("Query: ")))
-    # print(query)
 
     # Determine top file matches according to TF-IDF
     filenames = top_files(query, file_words, file_idfs, n=FILE_MATCHES)
-    print(filenames)
 
     # Extract sentences from top files
     sentences = dict()
@@ -42,12 +38,9 @@ def main():
                 tokens = tokenize(sentence)
                 if tokens:
                     sentences[sentence] = tokens
-    print(sentences)
 
     # Compute IDF values across sentences
     idfs = compute_idfs(sentences)
-    print(idfs)
-    sys.exit()
 
     # Determine top sentence matches
     matches = top_sentences(query, sentences, idfs, n=SENTENCE_MATCHES)
@@ -114,15 +107,14 @@ def top_files(query, files, idfs, n):
     to their IDF values), return a list of the filenames of the the `n` top
     files that match the query, ranked according to tf-idf.
     """
-    tfidfs = dict()
+    ranks = dict()
     for filename in files:
-        tfidfs[filename] = sum(files[filename].count(word) * idfs[word] 
+        ranks[filename] = sum(files[filename].count(word) * idfs[word] 
             for word in query if word in idfs)
 
-    tfidfs_sort = sorted(tfidfs.items(), key=lambda x: x[1], reverse=True)
-    filenames = [i[0] for i in tfidfs_sort][:n]
+    sorted_ranks = sorted(ranks, key=lambda f: ranks[f], reverse=True)[:n]
 
-    return filenames
+    return sorted_ranks
 
 
 def top_sentences(query, sentences, idfs, n):
@@ -133,11 +125,17 @@ def top_sentences(query, sentences, idfs, n):
     the query, ranked according to idf. If there are ties, preference should
     be given to sentences that have a higher query term density.
     """
-    idfs_totals = dict()
+    ranks = dict()
     for sentence in sentences:
-        idfs_totals[sentence] = sum(idfs[word] for word in query if word in sentences[sentence])
+        # Matching word measure
+        mwm = sum(idfs[word] for word in query if word in sentences[sentence])
+        # Query term density
+        qtd = sum(word in query for word in sentences[sentence]) / len(sentences[sentence])
+        ranks[sentence] = {"mwm": mwm, "qtd": qtd} 
     
+    sorted_ranks = sorted(ranks, key=lambda s: (ranks[s]["mwm"], ranks[s]["qtd"]), reverse=True)[:n]
     
+    return sorted_ranks
 
 
 if __name__ == "__main__":
