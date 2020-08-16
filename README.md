@@ -81,7 +81,7 @@ The following methods are implemented inside this function in order to manipulat
 * [Breaking Ties: Second Sorting][second sorting]
 
 ## Installation
-Inside of the <span style="color:red">questions</span> directory:
+Inside of the `questions` directory:
 
 * `pip3 install -r requirements.txt` | Install this project’s dependency: nltk for natural language processing.
 
