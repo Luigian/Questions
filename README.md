@@ -14,8 +14,23 @@ Then, once the top documents are found, passage retrieval will subdivide the top
 
 ## Implementation
 
-### preprocess 
+In the main function, we first load the files from the corpus directory into memory (via the `load_files` function). Each of the files is then tokenized (via `tokenize`) into a list of words, which then allows us to compute inverse document frequency values for each of the words (via `compute_idfs`). The user is then prompted to enter a query. The `top_files` function identifies the files that are the best match for the query. From those files, sentences are extracted, and the `top_sentences` function identifies the sentences that are the best match for the query.
 
+### load_files
+
+* The load_files function accepts the name of a directory and return a dictionary mapping the filename of each .txt file inside that directory to the file’s contents as a string.
+
+* On macOS, the `/` character is used to separate path components, while the `\` character is used on Windows. By using `os.path.join`, this function is platform-independent, it works regardless of operating system.
+
+* In the returned dictionary, there's one key named for each .txt file in the directory. The value associated with that key is a string (the result of reading the corresponding file).
+
+### tokenize
+
+
+
+### compute_idfs
+### top_files
+### top_sentences
 The preprocess function accept a string as input and return a lower cased list of its words. 
 The following methods are implemented inside this function: 
 * nltk’s `word_tokenize()` - Perform tokenization (split the string into words).
@@ -40,7 +55,7 @@ The following methods are implemented inside this function in order to manipulat
 * nltk’s `label()` - Return the node label of the tree.
 
 ## Resources
-* [CS50 AI Language Lecture][cs50 lecture]
+* [Language - Lecture 6 - CS50's Introduction to Artificial Intelligence with Python 2020][cs50 lecture]
 * [How to Clean Text for Machine Learning with Python][clean text]
 * [Python | Nested Dictionary][nested dictionary]
 * [Breaking Ties: Second Sorting][second sorting]
