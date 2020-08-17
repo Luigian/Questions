@@ -2,22 +2,6 @@
 
 ## An AI to answer questions
 
-`$ python3 questions.py corpus/`
-
-`Loading data...`  
-
-`Extracting words from corpus...`
-
-`Calculating inverse document frequencies...`
-
-`Query: How do neurons connect in a neural network?`
-
-`Calculating top file matches...`
-
-`Calculating top sentences matches...`
-
-`Neurons of one layer connect only to neurons of the immediately preceding and immediately following layers.`
-
 <img src="resources/images/questions_output.jpg" width="1000">
 
 Question Answering (QA) is a field within natural language processing focused on designing systems that can answer questions. 
