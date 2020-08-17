@@ -16,9 +16,17 @@ Then, once the top documents are found, passage retrieval will subdivide the top
 
 In the main function, we first load the files from the corpus directory into memory (via the `load_files` function). Each of the files is then tokenized (via `tokenize`) into a list of words, which then allows us to compute inverse document frequency values for each of the words (via `compute_idfs`). The user is then prompted to enter a query. The `top_files` function identifies the files that are the best match for the query. From those files, sentences are extracted, and the `top_sentences` function identifies the sentences that are the best match for the query.
 
+### Global variables
+
+* `FILE_MATCHES` specifies how many files should be matched for any given query. 
+
+* `SENTENCES_MATCHES` specifies how many sentences within those files should be matched for any given query. 
+
+* By default, each of these values is 1. The AI will find the top sentence from the top matching document as the answer to the question. 
+
 ### load_files
 
-* The load_files function accepts the name of a directory and return a dictionary mapping the filename of each .txt file inside that directory to the file’s contents as a string.
+* The `load_files` function accepts the name of a directory and return a dictionary mapping the filename of each .txt file inside that directory to the file’s contents as a string.
 
 * On macOS, the `/` character is used to separate path components, while the `\` character is used on Windows. By using `os.path.join`, this function is platform-independent, it works regardless of operating system.
 
@@ -26,33 +34,41 @@ In the main function, we first load the files from the corpus directory into mem
 
 ### tokenize
 
+* The `tokenize` function accepts a document (a string) as input, and return a list of all of the words in that document, in order and lowercased.
 
+* Use nltk’s `word_tokenize` function to perform tokenization.
+
+* Filter out punctuation and stopwords (common words that are unlikely to be useful for querying). Punctuation is defined as any character in string.punctuation. Stopwords are defined as any word in `nltk.corpus.stopwords.words("english")`.
+
+* If a word appears multiple times in the document, it should also appear multiple times in the returned list (unless it was filtered out).
 
 ### compute_idfs
+
+* The `compute_idfs` function accepts a dictionary of documents (a dictionary mapping names of documents to a list of words in that document) and return a new dictionary mapping words to their IDF (inverse document frequency) values. 
+
+* The inverse document frequency of a word is defined by taking the natural logarithm of the number of documents divided by the number of documents in which the word appears.
+
+* The returned dictionary maps every word that appears in at least one of the documents to its inverse document frequency value.
+
 ### top_files
+
+* The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the n top files that match the query, ranked according to tf-idf.
+
+* tf-idf for a term is computed by multiplying the number of times the term appears in the document by the IDF value for that term.
+
+* Files are ranked according to the sum of tf-idf values for any word in the query that also appears in the file. Words in the query that do not appear in the file doesn't contribute to the file’s score.
+
+* The returned list of filenames is of length n and is ordered with the best match first.
+
 ### top_sentences
-The preprocess function accept a string as input and return a lower cased list of its words. 
-The following methods are implemented inside this function: 
-* nltk’s `word_tokenize()` - Perform tokenization (split the string into words).
-* `lower()` - Convert all characters to lowercase.
-* `isalpha()` - Remove any word that does not contain at least one alphabetic character.
 
-### non-terminals global variable
+* The `top_sentences` function accepts a query (a set of words), sentences (a dictionary mapping sentences to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the n top sentences that match the query, ranked according to IDF.
 
-This is a set of context-free grammar rules that, when combined with the rules in the `TERMINALS` global variable, allow the parsing of all sentences in the `sentences` directory.
+* The returned list of sentences is of length n and is ordered with the best match first.
 
-Constraints: 
-* Avoid over-generation of sentences, sentences like "Armchair on the sat Holmes" aren't meant to be accepted by the parser.
-* Avoid  under-generation of sentences. A very long and specific rule like `(S -> N V Det Adj Adj Adj N P Det N P Det N)` would technically successfully generate sentence 10, but isn't useful or generalizable.
-* Try to be as general as possible without over-generating. The parser should accept the sentences: “Holmes sat in the armchair”, “Holmes sat in the red armchair” and “Holmes sat in the little red armchair”, but not the sentence: “Holmes sat in the the armchair”.
+* Sentences are ranked according to “matching word measure”: namely, the sum of IDF values for any word in the query that also appears in the sentence. Term frequency isn't taken into account here, only inverse document frequency.
 
-### np_chunk
-
-The np_chunk function accept a tree representing the syntax of a sentence (nltk.tree object) and return a list of all the noun phrase chunks in the sentence tree.
-A noun phrase chunk is defined as any subtree of the sentence whose label is "NP" that does not itself contain any other noun phrases as subtrees.
-The following methods are implemented inside this function in order to manipulate the nltk.tree object:
-* nltk’s `subtrees()` - Generate all the subtrees of a tree, optionally restricted to trees matching the filter function.
-* nltk’s `label()` - Return the node label of the tree.
+* If two sentences have the same value according to the matching word measure, then sentences with a higher “query term density” are preferred. Query term density is defined as the proportion of words in the sentence that are also words in the query. For example, if a sentence has 10 words, 3 of which are in the query, then the sentence’s query term density is 0.3.
 
 ## Resources
 * [Language - Lecture 6 - CS50's Introduction to Artificial Intelligence with Python 2020][cs50 lecture]
