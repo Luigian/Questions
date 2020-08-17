@@ -48,7 +48,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the `n` top files that match the query, ranked according to **tf-idf**.
 
-* The tf-idf for a term is computed by multiplying the number of times the term appears in the document (term frecuency) by the IDF value for that term.
+* The tf-idf for a term is computed by multiplying the number of times the term appears in the document (**term frecuency**) by the IDF value for that term.
 
 * Files are ranked according to the sum of tf-idf values for any word in the query that also appears in the file. Words in the query that do not appear in the file doesn't contribute to the file’s score.
 
