@@ -16,11 +16,7 @@ Then, once the top documents are found, passage retrieval will subdivide the top
 
 In the main function, we first load the files from the corpus directory into memory (via the `load_files` function). Each of the files is then tokenized (via `tokenize`) into a list of words, which then allows us to compute inverse document frequency values for each of the words (via `compute_idfs`). The user is then prompted to enter a query. The `top_files` function identifies the files that are the best match for the query. From those files, sentences are extracted, and the `top_sentences` function identifies the sentences that are the best match for the query.
 
-* `FILE_MATCHES` specifies how many files should be matched for any given query. 
-
-* `SENTENCES_MATCHES` specifies how many sentences within those files should be matched for any given query. 
-
-By default, each of these values is 1. The AI will find the top sentence from the top matching document as the answer to the question. 
+The global variable `FILE_MATCHES` specifies how many files should be matched for any given query. The global variable `SENTENCES_MATCHES` specifies how many sentences within those files should be matched for any given query. By default, each of these values is 1. The AI will find the top sentence from the top matching document as the answer to the question. 
 
 ### Loading the data
 
@@ -48,7 +44,7 @@ By default, each of these values is 1. The AI will find the top sentence from th
 
 * The returned dictionary maps every word that appears in at least one of the documents to its inverse document frequency value.
 
-### Calculating the top files matches
+### Finding the top files matches
 
 * The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the n top files that match the query, ranked according to tf-idf.
 
@@ -58,7 +54,7 @@ By default, each of these values is 1. The AI will find the top sentence from th
 
 * The returned list of filenames is of length n and is ordered with the best match first.
 
-### Calculating the top sentences matches
+### Finding the top sentences matches
 
 * The `top_sentences` function accepts a query (a set of words), sentences (a dictionary mapping sentences to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the n top sentences that match the query, ranked according to IDF.
 
