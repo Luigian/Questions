@@ -2,21 +2,21 @@
 
 ## An AI to answer questions
 
-`$ python3 questions.py corpus/
+`$ python3 questions.py corpus/`
 
-Loading data...  
+`Loading data...`  
 
-Extracting words from corpus...  
+`Extracting words from corpus...`
 
-Calculating inverse document frequencies...  
+`Calculating inverse document frequencies...`
 
-Query: How do neurons connect in a neural network?  
+`Query: How do neurons connect in a neural network?`
 
-Calculating top file matches...  
+`Calculating top file matches...`
 
-Calculating top sentences matches...  
+`Calculating top sentences matches...`
 
-Neurons of one layer connect only to neurons of the immediately preceding and immediately following layers.`  
+`Neurons of one layer connect only to neurons of the immediately preceding and immediately following layers.`
 
 <img src="resources/images/questions_output.jpg" width="1000">
 
