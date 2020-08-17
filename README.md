@@ -16,15 +16,13 @@ Then, once the top documents are found, passage retrieval will subdivide the top
 
 In the main function, we first load the files from the corpus directory into memory (via the `load_files` function). Each of the files is then tokenized (via `tokenize`) into a list of words, which then allows us to compute inverse document frequency values for each of the words (via `compute_idfs`). The user is then prompted to enter a query. The `top_files` function identifies the files that are the best match for the query. From those files, sentences are extracted, and the `top_sentences` function identifies the sentences that are the best match for the query.
 
-### Global variables
-
 * `FILE_MATCHES` specifies how many files should be matched for any given query. 
 
 * `SENTENCES_MATCHES` specifies how many sentences within those files should be matched for any given query. 
 
-* By default, each of these values is 1. The AI will find the top sentence from the top matching document as the answer to the question. 
+By default, each of these values is 1. The AI will find the top sentence from the top matching document as the answer to the question. 
 
-### load_files
+### Loading the data
 
 * The `load_files` function accepts the name of a directory and return a dictionary mapping the filename of each .txt file inside that directory to the file’s contents as a string.
 
@@ -32,7 +30,7 @@ In the main function, we first load the files from the corpus directory into mem
 
 * In the returned dictionary, there's one key named for each .txt file in the directory. The value associated with that key is a string (the result of reading the corresponding file).
 
-### tokenize
+### Extracting words
 
 * The `tokenize` function accepts a document (a string) as input, and return a list of all of the words in that document, in order and lowercased.
 
@@ -42,7 +40,7 @@ In the main function, we first load the files from the corpus directory into mem
 
 * If a word appears multiple times in the document, it should also appear multiple times in the returned list (unless it was filtered out).
 
-### compute_idfs
+### Calculating inverse document frecuencies
 
 * The `compute_idfs` function accepts a dictionary of documents (a dictionary mapping names of documents to a list of words in that document) and return a new dictionary mapping words to their IDF (inverse document frequency) values. 
 
@@ -50,17 +48,17 @@ In the main function, we first load the files from the corpus directory into mem
 
 * The returned dictionary maps every word that appears in at least one of the documents to its inverse document frequency value.
 
-### top_files
+### Calculating the top files matches
 
 * The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the n top files that match the query, ranked according to tf-idf.
 
-* tf-idf for a term is computed by multiplying the number of times the term appears in the document by the IDF value for that term.
+* The tf-idf for a term is computed by multiplying the number of times the term appears in the document by the IDF value for that term.
 
 * Files are ranked according to the sum of tf-idf values for any word in the query that also appears in the file. Words in the query that do not appear in the file doesn't contribute to the file’s score.
 
 * The returned list of filenames is of length n and is ordered with the best match first.
 
-### top_sentences
+### Calculating the top sentences matches
 
 * The `top_sentences` function accepts a query (a set of words), sentences (a dictionary mapping sentences to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the n top sentences that match the query, ranked according to IDF.
 
