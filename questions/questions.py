@@ -30,7 +30,7 @@ def main():
     query = set(tokenize(input("Query: ")))
 
     # Determine top file matches according to TF-IDF
-    print("Finding top file matches...")
+    print("Calculating top file matches...")
     filenames = top_files(query, file_words, file_idfs, n=FILE_MATCHES)
 
     # Extract sentences from top files
@@ -46,7 +46,7 @@ def main():
     idfs = compute_idfs(sentences)
 
     # Determine top sentence matches
-    print("Finding top sentence matches...")
+    print("Calculating top sentence matches...")
     matches = top_sentences(query, sentences, idfs, n=SENTENCE_MATCHES)
     for match in matches:
         print(match)
