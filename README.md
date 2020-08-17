@@ -46,7 +46,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 ### Finding the top files matches
 
-* The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the `n` top files that match the query, ranked according to **tf-idf**.
+* The `top_files` function accepts a query (a set of words), `files` (a dictionary mapping names of files to a list of their words), and `idfs` (a dictionary mapping words to their IDF values), and return a list of the filenames of the `n` top files that match the query, ranked according to **tf-idf**.
 
 * The tf-idf for a term is computed by multiplying the number of times the term appears in the document (**term frecuency**) by the IDF value for that term.
 
@@ -56,7 +56,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 ### Finding the top sentences matches
 
-* The `top_sentences` function accepts a query (a set of words), sentences (a dictionary mapping sentences to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the `n` top sentences that match the query, ranked according to IDF.
+* The `top_sentences` function accepts a query (a set of words), `sentences` (a dictionary mapping sentences to a list of their words), and `idfs` (a dictionary mapping words to their IDF values), and return a list of the `n` top sentences that match the query, ranked according to IDF.
 
 * The returned list of sentences is of length `n` and is ordered with the best match first.
 
