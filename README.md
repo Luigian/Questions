@@ -26,7 +26,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * In the returned dictionary, there's one key named for each .txt file in the directory. The value associated with that key is a string (the result of reading the corresponding file).
 
-### Extracting words
+### Extracting the words
 
 * The `tokenize` function accepts a document (a string) as input, and return a list of all of the words in that document, in order and lowercased.
 
@@ -36,7 +36,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * If a word appears multiple times in the document, it should also appear multiple times in the returned list (unless it was filtered out).
 
-### Calculating inverse document frecuencies
+### Calculating the inverse document frecuencies
 
 * The `compute_idfs` function accepts a dictionary of documents (a dictionary mapping names of documents to a list of words in that document) and return a new dictionary mapping words to their IDF (inverse document frequency) values. 
 
@@ -46,23 +46,23 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 ### Finding the top files matches
 
-* The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the n top files that match the query, ranked according to tf-idf.
+* The `top_files` function accepts a query (a set of words), files (a dictionary mapping names of files to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the filenames of the `n` top files that match the query, ranked according to **tf-idf**.
 
-* The tf-idf for a term is computed by multiplying the number of times the term appears in the document by the IDF value for that term.
+* The tf-idf for a term is computed by multiplying the number of times the term appears in the document (term frecuency) by the IDF value for that term.
 
 * Files are ranked according to the sum of tf-idf values for any word in the query that also appears in the file. Words in the query that do not appear in the file doesn't contribute to the file’s score.
 
-* The returned list of filenames is of length n and is ordered with the best match first.
+* The returned list of filenames is of length `n` and is ordered with the best match first.
 
 ### Finding the top sentences matches
 
-* The `top_sentences` function accepts a query (a set of words), sentences (a dictionary mapping sentences to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the n top sentences that match the query, ranked according to IDF.
+* The `top_sentences` function accepts a query (a set of words), sentences (a dictionary mapping sentences to a list of their words), and idfs (a dictionary mapping words to their IDF values), and return a list of the `n` top sentences that match the query, ranked according to IDF.
 
-* The returned list of sentences is of length n and is ordered with the best match first.
+* The returned list of sentences is of length `n` and is ordered with the best match first.
 
-* Sentences are ranked according to “matching word measure”: namely, the sum of IDF values for any word in the query that also appears in the sentence. Term frequency isn't taken into account here, only inverse document frequency.
+* Sentences are ranked according to **matching word measure**, which is the sum of IDF values for any word in the query that also appears in the sentence. Term frequency isn't taken into account here, only inverse document frequency.
 
-* If two sentences have the same value according to the matching word measure, then sentences with a higher “query term density” are preferred. Query term density is defined as the proportion of words in the sentence that are also words in the query. For example, if a sentence has 10 words, 3 of which are in the query, then the sentence’s query term density is 0.3.
+* If two sentences have the same value according to the matching word measure, then sentences with a higher **query term density** are preferred. Query term density is defined as the proportion of words in the sentence that are also words in the query. For example, if a sentence has 10 words, 3 of which are in the query, then the sentence’s query term density is 0.3.
 
 ## Resources
 * [Language - Lecture 6 - CS50's Introduction to Artificial Intelligence with Python 2020][cs50 lecture]
