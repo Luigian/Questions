@@ -44,7 +44,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * The returned dictionary maps every word that appears in at least one of the documents to its inverse document frequency value.
 
-### Finding the top files matches
+### Finding the top file matches
 
 * The `top_files` function accepts a query (a set of words), `files` (a dictionary mapping names of files to a list of their words), and `idfs` (a dictionary mapping words to their IDF values), and return a list of the filenames of the `n` top files that match the query, ranked according to **tf-idf**.
 
@@ -54,7 +54,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * The returned list of filenames is of length `n` and is ordered with the best match first.
 
-### Finding the top sentences matches
+### Finding the top sentence matches
 
 * The `top_sentences` function accepts a query (a set of words), `sentences` (a dictionary mapping sentences to a list of their words), and `idfs` (a dictionary mapping words to their IDF values), and return a list of the `n` top sentences that match the query, ranked according to IDF.
 
