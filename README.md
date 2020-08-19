@@ -30,9 +30,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * The `tokenize` function accepts a document (a string) as input, and return a list of all of the words in that document, in order and lowercased.
 
-* Use nltk’s `word_tokenize` function to perform tokenization.
-
-* Filter out punctuation and stopwords (common words that are unlikely to be useful for querying). Punctuation is defined as any character in string.punctuation. Stopwords are defined as any word in `nltk.corpus.stopwords.words("english")`.
+* It uses nltk’s `word_tokenize` function to perform tokenization, and filters out punctuation and stopwords (common words that are unlikely to be useful for querying). Punctuation is defined as any character in `string.punctuation`. Stopwords are defined as any word in `nltk.corpus.stopwords.words("english")`.
 
 * If a word appears multiple times in the document, it should also appear multiple times in the returned list (unless it was filtered out).
 
