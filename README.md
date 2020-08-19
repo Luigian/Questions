@@ -32,7 +32,7 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * It uses nltk’s `word_tokenize` function to perform tokenization, and filters out punctuation and stopwords (common words that are unlikely to be useful for querying). Punctuation is defined as any character in `string.punctuation`. Stopwords are defined as any word in `nltk.corpus.stopwords.words("english")`.
 
-* If a word appears multiple times in the document, it should also appear multiple times in the returned list (unless it was filtered out).
+* If a word appears multiple times in the document, it also appears multiple times in the returned list (unless it was filtered out).
 
 ### Calculating the inverse document frecuencies
 
