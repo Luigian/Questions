@@ -56,11 +56,11 @@ The global variable `FILE_MATCHES` specifies how many files should be matched fo
 
 * The `top_sentences` function accepts a query (a set of words), `sentences` (a dictionary mapping sentences to a list of their words), and `idfs` (a dictionary mapping words to their IDF values), and return a list of the `n` top sentences that match the query, ranked according to IDF.
 
-* The returned list of sentences is of length `n` and is ordered with the best match first.
-
 * Sentences are ranked according to **matching word measure**, which is the sum of IDF values for any word in the query that also appears in the sentence. Term frequency isn't taken into account here, only inverse document frequency.
 
 * If two sentences have the same value according to the matching word measure, then sentences with a higher **query term density** are preferred. Query term density is defined as the proportion of words in the sentence that are also words in the query. For example, if a sentence has 10 words, 3 of which are in the query, then the sentence’s query term density is 0.3.
+
+* The returned list of sentences is of length `n` and is ordered with the best match first.
 
 ## Resources
 * [Language - Lecture 6 - CS50's Introduction to Artificial Intelligence with Python 2020][cs50 lecture]
