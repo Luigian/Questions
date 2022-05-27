@@ -1,0 +1,428 @@
+Software Testing Life Cycle (STLC) phases are: Requirement of Analysis, Test Planning, Test Case Development, Test Environment Setup, Test Execution and Test Closure.
+
+The difference between Test Driven Development (TDD) and Behavior Driven Development (BDD) is that TDD is focused on testing smaller pieces of functionality in isolation, whereas BDD is designed to test an application's behavior from the end user's standpoint.
+
+Data driven Testing (DDT) is a programming paradigm in which the program statements describe the data to be matched, and the processing required, rather than defining a sequence of steps to be taken.
+
+Keyword Driven Testing (KDT) is a way of describing test cases by using a predefined set of Keywords, these Keywords are names which are associated with a set of actions that are required to perform a specific step in a test case.
+
+A project management is normaly structured as follows: Roadmap, then Epics or Features, then PBI’s or User Stories, and finally, Tasks.
+
+A Traceability Matrix is a document that demonstrates the relationship between requirements and other artifacts, it's used to prove that the requirements have been fulfilled, and it typically documents requirements, tests, test results, and issues.
+
+We normally run Smoke tests when every new functionality is integrated, for Continuous Integration, whereas Regression tests are run on every product release, or Continuous Deployment.
+
+Ceremonies in Agile facilitate visibility, transparency, and collaboration, some Agile ceremonies are: Sprint Planning, Daily Stand-Up, Sprint Review and Sprint Retrospective.
+
+The role of the Scrum Master is to keep the team organized, on track, serving as a bridge between product management and development.
+
+The Agile Testing Quadrant is a visual tool for understanding different QA tests; they differentiate between business and technology facing tests, and those that support programming or are critique to the product; testing types are sorted into these four categories on a grid.
+
+Some risks of automation in Agile process are: Wrong Estimation of Stories, Definition of Done and Lack of Technical Expertise.
+
+Continuous Delivery is a partly manual process where developers can deploy any changes to customers by simply clicking a button, while Continuous Deployment emphasizes automating the entire process.
+
+System Integration Testing (SIT) is done mainly to test the interface requirements of a system, in difference, User Acceptance Testing (UAT) is done to verify the system functionality as a whole by an end-user; appropriate test cases have to be written for both types of testing.
+
+System Integration Testing (SIT) can be done by three techniques: Top-down, Bottom-up, and Big bang approaches; User Acceptance Testing (UAT) can be done using five methodologies: Alpha and Beta testing, Contract Acceptance testing, Regulation Acceptance testing, Operational Acceptance testing, and Black box testing.
+
+Defects found in System Integration Testing (SIT) can be corrected easily, and diverse builds can be made based on defects; whereas defects found in User Acceptance Testing (UAT) are considered as a black mark to the testers and are not accepted.
+
+The goal in User Acceptance Testing (UAT) is that the business officials or clients must be satisfied that the developed product meets their needs in the business environment, whereas the goal in System Integration Testing (SIT) is to satisfy the functional requirements of the system.
+
+What are some HTTP Verbs
+
+GET - Retrieve
+POST - Create
+PUT - Update
+DELETE - Delete
+
+What are some API Response Codes
+
+1xx Informational
+2xx Success
+3xx Redirection
+4xx Client Error
+5xx Server Error
+200 OK
+201 Created
+202 Accepted
+204 No Content
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+500 Internal Server Error
+501 Not Implemented
+503 Service Unavailable
+
+Difference between REST and SOAP Services
+
+Representational state transfer (REST) is a set of architectural principles. Simple object access protocol (SOAP) is an official protocol maintained by the World Wide Web Consortium (W3C). The main difference is that SOAP is a protocol while REST is not.
+
+Parsing Json
+
+JSON.parse() is a crucial method for converting JSON data in string form into Javascript objects.
+
+Parsing XML
+
+It is the process of reading an XML document and providing an interface to the user application for accessing the document.
+
+Benefits of automation testing
+
+Speed
+Wider test coverage
+Consistency
+Cost savings
+Frequent and thorough testing
+Faster time to market
+
+Types Of Automation Testing
+
+Unit Testing: is testing small, individual components of the software. It’s the first stage of testing, and while it’s usually done manually, it can be automated.
+Smoke Tests: is a functional test that determines whether a build is stable. It verifies the function of essential features to make sure the program can endure further testing. The name comes from the idea that this test prevents the program from catching fire if it’s not ready for additional testing.
+Integration Tests: these functional tests make sure that all the individual pieces of software test are well when operating as a whole. 
+Regression Tests: regression tests are both functional and non-functional, ensuring that no part of the software has regressed after changes are made. 
+API Testing: the application programming interface or API acts as the conduit between all the other systems that your software needs to function. It’s usually tested after software development to make sure that everything is working together as it should.
+Security Tests: security tests are also functional and non-functional. Their purpose is to check everything for security weaknesses that can be exploited. 
+Performance Tests: non-functional performance tests evaluate stability and responsiveness. They ensure that the software can handle stress and deliver a better and more reliable user experience.
+Acceptance Tests: these are functional tests that try to determine how end-users will respond to the final product. This test must be passed successfully before the product can be released to end-users. 
+UI Tests: user interface tests are one of the last tests in the process. This test is designed to accurately replicate a typical user experience. It ensures that the end product that users interact with works as it should.
+
+Test Automation Frameworks
+
+The biggest benefit of an Automation framework is that it standardizes the testing process, which provides a structure so that everyone applying automated testing to the project is on the same page.
+Linear Framework: this type is sometimes called Record and Playback. Testers create a test script for each test case. It’s a very basic approach that’s more suited to a small team that doesn’t have a lot of experience with test automation.
+Modular Based Framework: this framework organizes each test case into small, independent modules. Each one has a different scenario, but they are all handled by the framework’s single master script. This approach is very efficient, but a lot of planning is required, and it’s best used by testers who have experience with automation testing tools.
+Library Architecture Framework: is an expansion of the modular-based approach, with a few differences. Tasks are grouped within the test script according to common objectives. These functions are then stored in a library, so they can be quickly accessed when needed. This framework is very flexible, but creating the scripts takes time, so experience in automated testing is beneficial.
+
+Selenium automation testing tool
+
+Is one of the most popular automation testing tools out there and is meant only for web applications. It has automation suites designed for bug reproduction and regression testing, and allows for testing across multiple browsers.
+It supports a range of programming languages, including Python, Java, and C#. Furthermore, it’s also open source and free to use, which makes it insanely cost-effective without skimping on features.
+
+About Cucumber
+
+Cucumber testing tool is a business-driven development tool written in Ruby.
+The business-driven development approach is an advancement over test-driven development approach, which follows the‘Given-When-Then’ steps for writing test cases.
+Cucumber framework makes use of Gherkin (A simple plain text language parser) to describe expected software behaviors in a logical language, which results in better communication and collaboration among technical and non-technical team members.
+Cucumber provides compatibility with popular software platforms like Selenium.
+
+
+Benefits of using Cucumber Testing Tools
+
+Involving stakeholders becomes easier regardless of their programming knowledge.
+Testers can write Test scripts without having in-depth knowledge of programming.
+Plugins are faster as compared to Selenium.
+Supports various programming languages.
+Code can be reused.
+Simple and quick setup.
+Flexible with different software platforms like Selenium, Ruby on Rails, Watir, Spring framework.
+
+What is Cucumber Framework
+
+Cucumber is used to execute automated acceptance tests written in the “Gherkin” language. Gherkin is a domain-specific language for behavior descriptions. Gherkin is business readable.
+Cucumber test automation makes use of two important files:
+Feature file – Contains code written in Gherkin (plain English text).
+Step definition file – Contains the actual code written by the developer.
+
+ Page Object Model design pattern
+
+Also known as POM, is a design pattern in Selenium that creates an object repository for storing all web elements. It is useful in reducing code duplication and improves test case maintenance. In Page Object Model, consider each web page of an application as a class file.
+
+How to determine if a test case is valid to be automated
+
+The task is going to be repeated, it’s going to save time, the requirements, the test, or the task are low risk, stable, and unlikely to change often, the test is subject to human error, is time-consuming, the test has significant downtime between steps, or is repetitive.
+Unit testing should take the top priority, followed by integration testing and functional testing. The types of test cases that should be automated have a lot of complex manual scenarios, especially those that require a lot of data or environment setup.
+And we want to start automating the most valuable tests to the least valuable tests. A simple scorecard can help you figure out where to start.
+
+What are some Types of Element Locators
+
+Element ID
+Field Name
+Text
+Link Text
+CSS Class
+XPath
+CSS Selector
+
+What are some types of Xpath
+
+Absolute XPath
+Is the direct way to find the element. It begins with the single forward slash(/), which means you can select the element from the root node. The disadvantage of the absolute XPath is that if there are any changes made in the path of the element, then that XPath fails.
+Relative XPath
+The path starts from the middle of the HTML DOM structure. Starts with the double forward slash (//), which means, it can search the element anywhere at the webpage.
+
+What is a Dynamic XPath and Axes methods
+
+It is a way to locate an element uniquely to decrease the number of matching results.
+There are few axes methods like:
+child, parent, ancestor, preceding sibling, following preceding.
+
+What is the Action Class
+
+It is the class that is required in order to perform any operations on a web application, such as clicking, sending keys, selecting drop-down boxes, etc. 
+
+What is the purpose of the testng.xml file
+
+TestNG.xml is a file that helps to configure and organize the tests. It controls the execution by putting all the test cases together, create test classes and define test suites.
+ 
+Types of Waits
+
+Implicit Waits
+It is applied to all elements in the script.
+We don't need to specify “Expected Conditions”.
+It is recommended to use when the elements are located with the time frame specified in implicit wait.
+Explicit Waits
+It is applied only to those elements which are specified by the user.
+We need to specify “Expected Conditions” on the elements to be located.
+It is recommended to use when the elements are taking a long time to load and also or verifying the property of the element like.
+visibilityOfElementLocated
+elementToBeClickable
+elementToBeSelected
+
+Types of Assertions
+
+Hard Assertion and Soft Assertion
+Hard Assertion: if an assertion fails, then it aborts the test case, otherwise it continues the execution, examples: AssertEquals, AssertNotEquals, AssertTrue, AssertFalse, AssertNull, AssertNotNull. Soft Assertion: execute the whole script even if the assertion fails.
+
+How to initialize the driver
+
+Using the statement:
+WebDriver driver = new ChromeDriver();
+
+How to get the value of a web element attribute
+
+Using the ‘getAttribute’ method:
+WebElement myElement = driver.findElement(By.id(“myId”));
+myElement.getAttribute(“myAttribute”);
+
+How to handle a dropdown
+
+Using the ‘Select’ class:
+Select myDropdown = new Select(driver.findElement(By.name(“myName”)));
+myDropdown.selectByVisibleText(“myText”);
+myDropdown.selectByIndex(1);
+myDropdown.deselectAll();
+
+Handling elements that have the same locator
+
+Using the method ‘findElements’ to store the elements  in a list, and then iterate it using the method ‘get’, to perform the necessary actions or validations.
+List<WebElement> myList = driver.findElements(By.tagName(“myTag”));
+for (int i = 0; i < myList.size(); i++) {
+    myList.get(i).getText();
+    myList.get(i).isSelected();
+}
+
+How to switch to another window
+
+By saving the current window and then iterating through the available windows and switching to any other that is not the current one.
+String parent = driver.getWindowHandle();
+Set<String> handles = driver.getWindowHandles();
+Iterator<String> iterator1 = handles.iterator();
+while (iterator1.hasNext()) {
+    String child_window = iterator1.next();
+    if (!parent.equals(child_window)) {
+        driver.switchTo().window(child_window);
+        break;
+    }
+}
+
+Difference between ‘driver.close()’ and ‘driver.quit()’
+
+The close() method closes the browser window currently in focus, whereas the quit() method quits the entire browser session with all its tabs and windows. 
+
+What are some annotations in TestNG
+
+The ‘@Before’ annotation for the ‘setUp()’ method at the beginning of every test.
+The ‘@After’ annotation for the ‘tearDown()’ method at the end of every test.
+The ‘@Test’ annotation for the ‘testMethod()’ at every test.
+
+Exception Handling
+
+Exceptions can be caught and handled by the program. When an exception occurs within a method, it creates an object. This object is called the exception object. It contains information about the exception, such as the name and description of the exception and the state of the program when the exception occurred. Exception Handling in Java is one of the effective means to handle the runtime errors so that the regular flow of the application can be preserved. Java Exception Handling is a mechanism to handle runtime errors such as: ClassNotFoundException, NullPointerException, IOException, SQLException, RemoteException, etc.
+
+How to implement a ‘try-catch’ block
+
+try {
+    statement;
+} 
+catch(Exception myException) {
+    System.out.println("My Error Message");
+}
+
+Maven commands
+
+mvn clean - cleans the maven project by deleting the target directory.
+mvn package - builds the maven project and packages them into a JAR, WAR, etc.
+mvn install - builds the maven project and installs the project files (JAR, WAR, pom.xml, etc) to the local repository.
+mvn deploy - o deploy the artifact to the remote repository.
+mvn validate - validates the maven project that everything is correct and all the necessary information is available.
+mvn test - is used to run the test cases of the project.
+mvn compile - to compile the source Java classes of the project.
+mvn verify - build the project, runs all the test cases and run any checks on the results of the integration tests to ensure quality criteria are met.
+
+Jenkins commands
+stop - to stop Jenkins from command line.
+start - to start Jenkins from command line.
+restart  - to restart Jenkins from command line.
+build - allows the user to trigger any job or pipeline for which they have permission.
+console - retrieves the console output for the specified build or Pipeline run.
+who-am-i - to list the current user’s credentials and permissions available to the user.
+
+SOLID Principles
+
+Single Responsibility: each class should solve only one problem.
+Open Closed Principle: extend a class’s behavior without modifying it.
+Liskov Substitution: every derived class should be substitutable for its parent class.
+Interface Segregation: have many client-specific interfaces, avoiding one big, general-purpose interface.
+Dependency Inversion: high level modules should not depend upon low level modules.
+
+GRASP Principles
+
+The different patterns and principles used in GRASP are controller, creator, indirection, information expert, low coupling, high cohesion, polymorphism, protected variations, and pure fabrication. The GRASP principles are really a mental tool set, a learning aid to help in the design of object-oriented software.
+
+OPP Principles
+
+Encapsulation: access to private attributes and methods is not possible from outside the class as a way to ensure security. (private keyword)
+Abstraction: for hiding the internal details or implementations of a function and showing its functionalities only. Any class with at least one abstract function is an abstract class. (abstract keyword)
+Inheritance: a child class inherits the attributes and methods of a parent class. (extend keyword)
+Polymorphism: functions having the same names but carrying different functionalities.
+
+What are Listeners
+
+Listeners are TestNG annotations that literally “listen” to the events in a script and modify TestNG behaviour accordingly. These listeners are applied as interfaces in the code. For example, the most common usage of listeners occurs when taking a screenshot of a particular test that has failed along with the reason for its failure. Listeners also help with logging and generating results.
+TestNG: IAnnotationTransformer, IExecutionListener, IHookable
+Java: ActionListener, KeyListener, FocusListener, MouseListener
+
+What is Mocking
+
+Mocking is a process used in unit testing when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies.
+Mocking libraries: Moq, NSubstitute, FakeItEasy
+
+What are Design Patterns
+
+Design patterns are programming language independent strategies for solving the common object-oriented design problems. That means, a design pattern represents an idea, not a particular implementation.
+By using the design patterns you can make your code more flexible, reusable and maintainable. It is the most important part because java internally follows design patterns.
+Behavioral: Singleton Pattern
+Creational: Decorator Pattern
+Structural: Iterator Pattern
+We can apply a Singleton pattern on the Factory class or make the factory method static. This is one of the most widely used java design patterns.
+
+Difference between Sets and Lists
+
+A List is an ordered grouping of items.
+A Set is an unordered grouping of items with no duplicates allowed (usually).
+Conceptually, we usually refer to an unordered grouping that allows duplicates as a Bag, and to an unordered grouping that doesn't allow duplicates as a Set.
+
+Difference between Array and Lists
+
+Array can store elements of only one data type, but List can store the elements of different data types.
+
+Java Map interface
+
+The java.util.Map, represents a mapping between a key and a value. Each key is linked to a specific value. Once stored in a Map, you can later look up the value using just the key.
+Map mapA = new HashMap();
+Map mapB = new TreeMap();
+
+String Buffer
+
+It is a peer class of String that provides much of the functionality of strings. String represents fixed-length, immutable character sequences, while StringBuffer represents growable and writable character sequences. StringBuffer may have characters and substrings inserted in the middle or appended to the end.
+
+If the Object value is not going to change use String Class because a String object is immutable.
+If the Object value can change and will only be accessed from a single thread, use a StringBuilder because StringBuilder is unsynchronized.
+In case the Object value can change, and will be modified by multiple threads, use a StringBuffer because StringBuffer is synchronized.
+
+Convert integer to string
+
+In case, we want to concatenate two integers or find out if an integer contains a digit.
+Integer.toString(123);
+i.toString();
+String str = "" + 123;
+Integer i = new Integer(123);
+    StringBuilder sb = new StringBuilder(); // or StringBuffer
+    sb.append(i);
+
+What is Instantiation
+
+Instantiation is nothing but creating a new object/instance of a class.
+
+What is a class constructor
+
+The job of the class constructor is to assign the values to the data members of the class when an object of the class is created. We call a constructor method whenever an object of the class is constructed.
+
+What is the self keyword
+
+The “self” keyword represents the instance of the class. By using the “self” keyword we can access the attributes and methods of the class. It is useful in method definitions and in variable initialization. The “self” is explicitly used every time we define a method.
+
+What are the instance methods
+The methods defined inside a class other than the constructor method are known as the instance methods.
+
+Concurrency & Multithreading
+
+Concurrency is the ability to run several programs or several parts of a program in parallel. Multithreading is a model of program execution that allows for multiple threads to be created within a process, executing independently but concurrently sharing process resources. A system is said to be concurrent if it can support two or more actions in progress at the same time. A system is said to be parallel if it can support two or more actions executing simultaneously.
+
+Static Keyword vs Final keyword 
+
+When a method is declared as static, it is not needed to create an object to call that method. The method can be called using the class name. 
+The final variables cannot be reinitialized, the final methods cannot be overridden, the final class cannot be inherited by other classes.
+
+Override vs Overload
+
+The method Overriding occurs between superclass and subclass, overriding methods have the same signature (same name and arguments). Overloading occurs between the methods in the same class, overloaded method names are the same, but the parameters are different.
+
+Interface vs Abstract Class
+
+A Java interface can be implemented using the keyword “implements” and an abstract class can be extended using the keyword “extends”. An interface can extend another Java interface only, an abstract class can extend another Java class only, and implement multiple Java interfaces. All methods declared within an interface must be implemented by the classes that implements this interface.
+
+Access Modifier keywords 
+
+They are written before the variable/method/class (return) type and name and are used to facilitate the encapsulation of components. 
+public - the member can be accessed from anywhere.
+protected - the member is only inaccessible from non-subclasses in a different package.
+default (package-private) - also known as package access, the member can be accessed by any class within the same package.
+private - the member can only be accessed by other members within the same class.
+
+Non access modifiers 
+
+static, final, abstract, synchronized, transient, volatile, strictfp.
+
+Grouping and Profiling
+
+groupingBy() method in Java 8 now permits developers to perform GROUP BY operation directly. GROUP BY is a SQL aggregate operation that is quite useful. It enables you to categorize records based on specified criteria.
+Profiling is the process of examining an application to locate memory or performance-related issues. When profiling a Java application, you can monitor the Java Virtual Machine (JVM) and obtain data about application performance, including method timing, object allocation and garbage collection. You can use this data to locate potential areas in your code that can be optimized to improve performance.
+
+SQL
+
+Structured Query Language, is a relational query language that is used for interacting with the database.
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+SQL Joins
+
+(INNER) JOIN: Returns records that have matching values in both tables.
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table.
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table.
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table.
+Example of inner joining two tables, Order and Customer:
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+Fibonacci
+
+Input: Some non-negative integer n
+Output: The nth number in the Fibonacci sequence
+If n <= 1 then
+  return n
+else 
+  return F (n - 1) + F (n - 2)
