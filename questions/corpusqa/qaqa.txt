@@ -24,81 +24,61 @@ Continuous Delivery is a partly manual process where developers can deploy any c
 
 System Integration Testing (SIT) is done mainly to test the interface requirements of a system, in difference, User Acceptance Testing (UAT) is done to verify the system functionality as a whole by an end-user; appropriate test cases have to be written for both types of testing.
 
-System Integration Testing (SIT) can be done by three techniques: Top-down, Bottom-up, and Big bang approaches; User Acceptance Testing (UAT) can be done using five methodologies: Alpha and Beta testing, Contract Acceptance testing, Regulation Acceptance testing, Operational Acceptance testing, and Black box testing.
+System Integration Testing (SIT) can be done by three techniques: Top-down, Bottom-up, and Big bang approaches.
+
+User Acceptance Testing (UAT) can be done using five techniques: Alpha and Beta tests, Contract tests, Regulation tests, Operational tests, and Black box tests.
 
 Defects found in System Integration Testing (SIT) can be corrected easily, and diverse builds can be made based on defects; whereas defects found in User Acceptance Testing (UAT) are considered as a black mark to the testers and are not accepted.
 
 The goal in User Acceptance Testing (UAT) is that the business officials or clients must be satisfied that the developed product meets their needs in the business environment, whereas the goal in System Integration Testing (SIT) is to satisfy the functional requirements of the system.
 
-What are some HTTP Verbs
+Some HTTP Verbs are: GET to Retrieve, POST to Create, PUT to Update and DELETE to Delete.
 
-GET - Retrieve
-POST - Create
-PUT - Update
-DELETE - Delete
+Some API Response Codes are: 1xx Informational, 2xx Success (200 OK, 201 Created, 202 Accepted, 204 No Content), 3xx Redirection, 4xx Client Error (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found), 5xx Server Error (500 Internal Server Error, 501 Not Implemented, 503 Service Unavailable). 
 
-What are some API Response Codes
+The difference between Representational State Transfer (REST) and Simple Object Access Protocol (SOAP) Services is that REST is a set of architectural principles, while SOAP is an official protocol maintained by the World Wide Web Consortium (W3C), the main difference is that SOAP is a protocol while REST is not.
 
-1xx Informational
-2xx Success
-3xx Redirection
-4xx Client Error
-5xx Server Error
-200 OK
-201 Created
-202 Accepted
-204 No Content
-400 Bad Request
-401 Unauthorized
-403 Forbidden
-404 Not Found
-500 Internal Server Error
-501 Not Implemented
-503 Service Unavailable
+The method for parsing a Json is JSON.parse(), it converts JSON data in string form into Javascript objects.
 
-Difference between REST and SOAP Services
+Parsing XML is the process of reading an XML document and providing an interface to the user application for accessing the document.
 
-Representational state transfer (REST) is a set of architectural principles. Simple object access protocol (SOAP) is an official protocol maintained by the World Wide Web Consortium (W3C). The main difference is that SOAP is a protocol while REST is not.
+Some benefits of automation testing are: Speed, Wider test coverage, Consistency, Cost savings, Frequent and thorough testing and Faster time to market.
 
-Parsing Json
+Some types Of Automation Testing are: Unit Tests, Smoke Tests, Integration Tests, Regression Tests, API Tests, Security Tests, Performance Tests, Acceptance Tests, UI Tests.
 
-JSON.parse() is a crucial method for converting JSON data in string form into Javascript objects.
+Unit Testing is testing small, individual components of the software; it’s the first stage of testing, and while it’s usually done manually, it can be automated.
 
-Parsing XML
+Smoke Testing is a functional test that determines whether a build is stable; it verifies the function of essential features to make sure the program can endure further testing; the name comes from the idea that this test prevents the program from catching fire if it’s not ready for additional testing.
 
-It is the process of reading an XML document and providing an interface to the user application for accessing the document.
+Integration Testing is a functional testing to make sure that all the individual pieces of software test are well when operating as a whole.
+ 
+Regression Testing is both functional and non-functional, ensuring that no part of the software has regressed after changes are made.
+ 
+API Testing is testing the application programming interface (API) acts as the conduit between all the other systems that our software needs to function,  it’s usually tested after software development to make sure that everything is working together as it should.
 
-Benefits of automation testing
+Security Testing is a functional and non-functional testing, it purpose is to check everything for security weaknesses that can be exploited.
 
-Speed
-Wider test coverage
-Consistency
-Cost savings
-Frequent and thorough testing
-Faster time to market
+Performance Testing is a non-functional testing to evaluate stability and responsiveness, it ensure that the software can handle stress and deliver a better and more reliable user experience.
 
-Types Of Automation Testing
+Acceptance Testing is a functional testing that try to determine how end-users will respond to the final product, this tests must be passed successfully before the product can be released to end-users.
 
-Unit Testing: is testing small, individual components of the software. It’s the first stage of testing, and while it’s usually done manually, it can be automated.
-Smoke Tests: is a functional test that determines whether a build is stable. It verifies the function of essential features to make sure the program can endure further testing. The name comes from the idea that this test prevents the program from catching fire if it’s not ready for additional testing.
-Integration Tests: these functional tests make sure that all the individual pieces of software test are well when operating as a whole. 
-Regression Tests: regression tests are both functional and non-functional, ensuring that no part of the software has regressed after changes are made. 
-API Testing: the application programming interface or API acts as the conduit between all the other systems that your software needs to function. It’s usually tested after software development to make sure that everything is working together as it should.
-Security Tests: security tests are also functional and non-functional. Their purpose is to check everything for security weaknesses that can be exploited. 
-Performance Tests: non-functional performance tests evaluate stability and responsiveness. They ensure that the software can handle stress and deliver a better and more reliable user experience.
-Acceptance Tests: these are functional tests that try to determine how end-users will respond to the final product. This test must be passed successfully before the product can be released to end-users. 
-UI Tests: user interface tests are one of the last tests in the process. This test is designed to accurately replicate a typical user experience. It ensures that the end product that users interact with works as it should.
-
-Test Automation Frameworks
+User Interface (UI) Testing is one of the last testing phases in the process; this test is designed to accurately replicate a typical user experience; it ensures that the end product that users interact with works as it should.
 
 The biggest benefit of an Automation framework is that it standardizes the testing process, which provides a structure so that everyone applying automated testing to the project is on the same page.
-Linear Framework: this type is sometimes called Record and Playback. Testers create a test script for each test case. It’s a very basic approach that’s more suited to a small team that doesn’t have a lot of experience with test automation.
-Modular Based Framework: this framework organizes each test case into small, independent modules. Each one has a different scenario, but they are all handled by the framework’s single master script. This approach is very efficient, but a lot of planning is required, and it’s best used by testers who have experience with automation testing tools.
-Library Architecture Framework: is an expansion of the modular-based approach, with a few differences. Tasks are grouped within the test script according to common objectives. These functions are then stored in a library, so they can be quickly accessed when needed. This framework is very flexible, but creating the scripts takes time, so experience in automated testing is beneficial.
+
+Some types of Test Automation Framework are: Linear, Modular based and Library architecture.
+
+Linear Framework: this type is sometimes called Record and Playback; testers create a test script for each test case; it’s a very basic approach that’s more suited to a small team that doesn’t have a lot of experience with test automation.
+
+Modular Based Framework: this framework organizes each test case into small, independent modules; each one has a different scenario, but they are all handled by the framework’s single master script; this approach is very efficient, but a lot of planning is required, and it’s best used by testers who have experience with automation testing tools.
+
+Library Architecture Framework: is an expansion of the modular-based approach, with a few differences; tasks are grouped within the test script according to common objectives; these functions are then stored in a library, so they can be quickly accessed when needed. this framework is very flexible, but creating the scripts takes time, so experience in automated testing is beneficial.
+
+--------------------------------------------------------------------------------------------------------------------
 
 Selenium automation testing tool
 
-Is one of the most popular automation testing tools out there and is meant only for web applications. It has automation suites designed for bug reproduction and regression testing, and allows for testing across multiple browsers.
+Is one of the most popular automation testing tools out there and is meant only for web applications. It has automation suites designed for bug reproduction and regression tests, and allows to test across multiple browsers.
 It supports a range of programming languages, including Python, Java, and C#. Furthermore, it’s also open source and free to use, which makes it insanely cost-effective without skimping on features.
 
 About Cucumber
@@ -133,7 +113,7 @@ Also known as POM, is a design pattern in Selenium that creates an object reposi
 How to determine if a test case is valid to be automated
 
 The task is going to be repeated, it’s going to save time, the requirements, the test, or the task are low risk, stable, and unlikely to change often, the test is subject to human error, is time-consuming, the test has significant downtime between steps, or is repetitive.
-Unit testing should take the top priority, followed by integration testing and functional testing. The types of test cases that should be automated have a lot of complex manual scenarios, especially those that require a lot of data or environment setup.
+Unit tests should take the top priority, followed by integration tests and functional tests. The types of test cases that should be automated have a lot of complex manual scenarios, especially those that require a lot of data or environment setup.
 And we want to start automating the most valuable tests to the least valuable tests. A simple scorecard can help you figure out where to start.
 
 What are some Types of Element Locators
@@ -297,7 +277,7 @@ Java: ActionListener, KeyListener, FocusListener, MouseListener
 
 What is Mocking
 
-Mocking is a process used in unit testing when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies.
+Mocking is a process used in unit tests when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies.
 Mocking libraries: Moq, NSubstitute, FakeItEasy
 
 What are Design Patterns
