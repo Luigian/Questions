@@ -74,162 +74,56 @@ Modular Based Framework: this framework organizes each test case into small, ind
 
 Library Architecture Framework: is an expansion of the modular-based approach, with a few differences; tasks are grouped within the test script according to common objectives; these functions are then stored in a library, so they can be quickly accessed when needed. this framework is very flexible, but creating the scripts takes time, so experience in automated testing is beneficial.
 
---------------------------------------------------------------------------------------------------------------------
+Selenium automation testing tool is one of the most popular automation testing tools out there and is meant only for web applications; it has automation suites designed for bug reproduction and regression tests, and allows to test across multiple browsers; it supports a range of programming languages, including Python, Java, and C#; it’s also open source and free to use, which makes it insanely cost-effective without skimping on features.
 
-Selenium automation testing tool
+Cucumber testing tool is a business-driven development tool written in Ruby; the business-driven development approach is an advancement over test-driven development approach, which follows the‘Given-When-Then’ steps for writing test cases; Cucumber makes use of Gherkin (A simple plain text language parser) to describe expected software behaviors in a logical language, which results in better communication and collaboration among technical and non-technical team members; Cucumber provides compatibility with popular software platforms like Selenium.
 
-Is one of the most popular automation testing tools out there and is meant only for web applications. It has automation suites designed for bug reproduction and regression tests, and allows to test across multiple browsers.
-It supports a range of programming languages, including Python, Java, and C#. Furthermore, it’s also open source and free to use, which makes it insanely cost-effective without skimping on features.
+Benefits of using Cucumber Testing Tools are: Involving stakeholders becomes easier regardless of their programming knowledge, Testers can write Test scripts without having in-depth knowledge of programming, Plugins are faster as compared to Selenium, Supports various programming languages, Code can be reused, Simple and quick setup, Flexible with different software platforms like Selenium, Ruby on Rails, Watir, Spring framework.
 
-About Cucumber
-
-Cucumber testing tool is a business-driven development tool written in Ruby.
-The business-driven development approach is an advancement over test-driven development approach, which follows the‘Given-When-Then’ steps for writing test cases.
-Cucumber framework makes use of Gherkin (A simple plain text language parser) to describe expected software behaviors in a logical language, which results in better communication and collaboration among technical and non-technical team members.
-Cucumber provides compatibility with popular software platforms like Selenium.
+Cucumber Framework is used to execute automated acceptance tests written in the “Gherkin” language; Gherkin is a domain-specific language for behavior descriptions; Gherkin is business readable; Cucumber test automation makes use of two important files: Feature file – Contains code written in Gherkin (plain English text) and Step definition file – Contains the actual code written by the developer.
 
 
-Benefits of using Cucumber Testing Tools
+Page Object Model design pattern (POM) is a design pattern in Selenium that creates an object repository for storing all web elements; it is useful in reducing code duplication and improves test case maintenance; in Page Object Model, consider each web page of an application as a class file.
 
-Involving stakeholders becomes easier regardless of their programming knowledge.
-Testers can write Test scripts without having in-depth knowledge of programming.
-Plugins are faster as compared to Selenium.
-Supports various programming languages.
-Code can be reused.
-Simple and quick setup.
-Flexible with different software platforms like Selenium, Ruby on Rails, Watir, Spring framework.
+How to determine if a test case is valid to be automated: The task is going to be repeated, it’s going to save time, the requirements, the test, or the task are low risk, stable, and unlikely to change often, the test is subject to human error, is time-consuming, the test has significant downtime between steps, or is repetitive; Unit tests should take the top priority, followed by integration tests and functional tests; the types of test cases that should be automated have a lot of complex manual scenarios, especially those that require a lot of data or environment setup; and we want to start automating the most valuable tests to the least valuable tests; a simple scorecard can help us figure out where to start.
 
-What is Cucumber Framework
+Some Types of Element Locators: Element ID, Field Name, Text, Link Text, CSS Class, XPath, CSS Selector.
 
-Cucumber is used to execute automated acceptance tests written in the “Gherkin” language. Gherkin is a domain-specific language for behavior descriptions. Gherkin is business readable.
-Cucumber test automation makes use of two important files:
-Feature file – Contains code written in Gherkin (plain English text).
-Step definition file – Contains the actual code written by the developer.
+Some types of Xpaths: Absolute, Relative and Dynamic.
 
- Page Object Model design pattern
+Absolute xpath is the direct way to find the element, it begins with the single forward slash(/), which means you can select the element from the root node; the disadvantage of the absolute XPath is that if there are any changes made in the path of the element, then that XPath fails.
 
-Also known as POM, is a design pattern in Selenium that creates an object repository for storing all web elements. It is useful in reducing code duplication and improves test case maintenance. In Page Object Model, consider each web page of an application as a class file.
+Relative XPath is when the path starts from the middle of the HTML DOM structure; starts with the double forward slash (//), which means, it can search the element anywhere at the webpage.
 
-How to determine if a test case is valid to be automated
+Dynamic XPath make use of Axes methods which are a way to locate an element uniquely to decrease the number of matching results; there are few axes methods like: child, parent, ancestor, preceding sibling, following preceding.
 
-The task is going to be repeated, it’s going to save time, the requirements, the test, or the task are low risk, stable, and unlikely to change often, the test is subject to human error, is time-consuming, the test has significant downtime between steps, or is repetitive.
-Unit tests should take the top priority, followed by integration tests and functional tests. The types of test cases that should be automated have a lot of complex manual scenarios, especially those that require a lot of data or environment setup.
-And we want to start automating the most valuable tests to the least valuable tests. A simple scorecard can help you figure out where to start.
+The Action Class is the class that is required in order to perform any operations on a web application, such as clicking, sending keys, selecting drop-down boxes, etc.
 
-What are some Types of Element Locators
+The purpose of the testng.xml is a file that helps to configure and organize the tests; it controls the execution by putting all the test cases together, create test classes and define test suites.
 
-Element ID
-Field Name
-Text
-Link Text
-CSS Class
-XPath
-CSS Selector
+Some Types of Waits are Implicit Wait and Explicit Wait; Implicit Wait is applied to all elements in the script, we don't need to specify the “Expected Conditions”, is recommended to use when the elements are located with the time frame specified in implicit wait; Explicit Wait is applied only to those elements which are specified by the user, we need to specify the “Expected Conditions” on the elements to be located, it is recommended to use when the elements are taking a long time to load and also or verifying the property of the element like visibilityOfElementLocated, elementToBeClickable or elementToBeSelected.
 
-What are some types of Xpath
+Some Types of Assertions are: Hard Assertion and Soft Assertion; Hard Assertion: if an assertion fails, then it aborts the test case, otherwise it continues the execution, examples: AssertEquals, AssertNotEquals, AssertTrue, AssertFalse, AssertNull, AssertNotNull. Soft Assertion: execute the whole script even if the assertion fails.
 
-Absolute XPath
-Is the direct way to find the element. It begins with the single forward slash(/), which means you can select the element from the root node. The disadvantage of the absolute XPath is that if there are any changes made in the path of the element, then that XPath fails.
-Relative XPath
-The path starts from the middle of the HTML DOM structure. Starts with the double forward slash (//), which means, it can search the element anywhere at the webpage.
+To initialize the driver we use the statement: WebDriver driver = new ChromeDriver();
 
-What is a Dynamic XPath and Axes methods
+To get the value of a web element attribute we use the ‘getAttribute’ method, for example: WebElement myElement = driver.findElement(By.id(“myId”)); and then myElement.getAttribute(“myAttribute”);
 
-It is a way to locate an element uniquely to decrease the number of matching results.
-There are few axes methods like:
-child, parent, ancestor, preceding sibling, following preceding.
+In order to handle a dropdown we use the ‘Select’ class, for example: Select myDropdown = new Select(driver.findElement(By.name(“myName”))); and the we can do myDropdown.selectByVisibleText(“myText”); or myDropdown.selectByIndex(1); or myDropdown.deselectAll();
 
-What is the Action Class
+To handle elements that have the same locator we use the method ‘findElements’ to store the elements in a list, and then iterate this list using a for loop and the method ‘get’, and then perform the necessary actions or validations, for example: List<WebElement> myList = driver.findElements(By.tagName(“myTag”)); and then, for (int i = 0; i < myList.size(); i++) { myList.get(i).getText(); myList.get(i).isSelected(); }
 
-It is the class that is required in order to perform any operations on a web application, such as clicking, sending keys, selecting drop-down boxes, etc. 
+In order to switch to another window, first we should save the current window, then iterate through the available windows, and switch to any other that is not the current one; for example: String parent = driver.getWindowHandle(); Set<String> handles = driver.getWindowHandles(); Iterator<String> iterator1 = handles.iterator(); while (iterator1.hasNext()) { String child_window = iterator1.next(); if (!parent.equals(child_window)) { driver.switchTo().window(child_window); break; } }
 
-What is the purpose of the testng.xml file
+The difference between ‘driver.close()’ and ‘driver.quit()’ is that the close() method closes the browser window currently in focus, whereas the quit() method quits the entire browser session with all its tabs and windows. 
 
-TestNG.xml is a file that helps to configure and organize the tests. It controls the execution by putting all the test cases together, create test classes and define test suites.
- 
-Types of Waits
+Some examples of annotations in TestNG are: the @Before annotation for the setUp() method at the beginning of every test; the @After annotation for the tearDown() method at the end of every test; and the @Test annotation for the testMethod() at every test.
 
-Implicit Waits
-It is applied to all elements in the script.
-We don't need to specify “Expected Conditions”.
-It is recommended to use when the elements are located with the time frame specified in implicit wait.
-Explicit Waits
-It is applied only to those elements which are specified by the user.
-We need to specify “Expected Conditions” on the elements to be located.
-It is recommended to use when the elements are taking a long time to load and also or verifying the property of the element like.
-visibilityOfElementLocated
-elementToBeClickable
-elementToBeSelected
+Exception Handling works like this: Exceptions can be caught and handled by the program, when an exception occurs within a method, it creates an object, this object is called the exception object, it contains information about the exception, such as the name and description of the exception and the state of the program when the exception occurred; Exception Handling in Java is one of the effective means to handle the runtime errors so that the regular flow of the application can be preserved; Java Exception Handling is a mechanism to handle runtime errors such as: ClassNotFoundException, NullPointerException, IOException, SQLException, RemoteException, etc.
 
-Types of Assertions
+To implement a ‘try-catch’ block we use two blocks of code, for example: try { statement; } and, catch(Exception myException) { System.out.println("My Error Message"); }
 
-Hard Assertion and Soft Assertion
-Hard Assertion: if an assertion fails, then it aborts the test case, otherwise it continues the execution, examples: AssertEquals, AssertNotEquals, AssertTrue, AssertFalse, AssertNull, AssertNotNull. Soft Assertion: execute the whole script even if the assertion fails.
-
-How to initialize the driver
-
-Using the statement:
-WebDriver driver = new ChromeDriver();
-
-How to get the value of a web element attribute
-
-Using the ‘getAttribute’ method:
-WebElement myElement = driver.findElement(By.id(“myId”));
-myElement.getAttribute(“myAttribute”);
-
-How to handle a dropdown
-
-Using the ‘Select’ class:
-Select myDropdown = new Select(driver.findElement(By.name(“myName”)));
-myDropdown.selectByVisibleText(“myText”);
-myDropdown.selectByIndex(1);
-myDropdown.deselectAll();
-
-Handling elements that have the same locator
-
-Using the method ‘findElements’ to store the elements  in a list, and then iterate it using the method ‘get’, to perform the necessary actions or validations.
-List<WebElement> myList = driver.findElements(By.tagName(“myTag”));
-for (int i = 0; i < myList.size(); i++) {
-    myList.get(i).getText();
-    myList.get(i).isSelected();
-}
-
-How to switch to another window
-
-By saving the current window and then iterating through the available windows and switching to any other that is not the current one.
-String parent = driver.getWindowHandle();
-Set<String> handles = driver.getWindowHandles();
-Iterator<String> iterator1 = handles.iterator();
-while (iterator1.hasNext()) {
-    String child_window = iterator1.next();
-    if (!parent.equals(child_window)) {
-        driver.switchTo().window(child_window);
-        break;
-    }
-}
-
-Difference between ‘driver.close()’ and ‘driver.quit()’
-
-The close() method closes the browser window currently in focus, whereas the quit() method quits the entire browser session with all its tabs and windows. 
-
-What are some annotations in TestNG
-
-The ‘@Before’ annotation for the ‘setUp()’ method at the beginning of every test.
-The ‘@After’ annotation for the ‘tearDown()’ method at the end of every test.
-The ‘@Test’ annotation for the ‘testMethod()’ at every test.
-
-Exception Handling
-
-Exceptions can be caught and handled by the program. When an exception occurs within a method, it creates an object. This object is called the exception object. It contains information about the exception, such as the name and description of the exception and the state of the program when the exception occurred. Exception Handling in Java is one of the effective means to handle the runtime errors so that the regular flow of the application can be preserved. Java Exception Handling is a mechanism to handle runtime errors such as: ClassNotFoundException, NullPointerException, IOException, SQLException, RemoteException, etc.
-
-How to implement a ‘try-catch’ block
-
-try {
-    statement;
-} 
-catch(Exception myException) {
-    System.out.println("My Error Message");
-}
+---------------------------------------------------------------------
 
 Maven commands
 
