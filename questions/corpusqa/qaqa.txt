@@ -123,99 +123,33 @@ Exception Handling works like this: Exceptions can be caught and handled by the 
 
 To implement a ‘try-catch’ block we use two blocks of code, for example: try { statement; } and, catch(Exception myException) { System.out.println("My Error Message"); }
 
----------------------------------------------------------------------
+Some Maven commands are: mvn clean - cleans the maven project by deleting the target directory; mvn package - builds the maven project and packages them into a JAR, WAR, etc; mvn install - builds the maven project and installs the project files (JAR, WAR, pom.xml, etc) to the local repository; mvn deploy - o deploy the artifact to the remote repository; mvn validate - validates the maven project that everything is correct and all the necessary information is available; mvn test - is used to run the test cases of the project; mvn compile - to compile the source Java classes of the project; mvn verify - build the project, runs all the test cases and run any checks on the results of the integration tests to ensure quality criteria are met.
 
-Maven commands
+Some Jenkins commands are: stop - to stop Jenkins from command line; start - to start Jenkins from command line; restart  - to restart Jenkins from command line; build - allows the user to trigger any job or pipeline for which they have permission; console - retrieves the console output for the specified build or Pipeline run; who-am-i - to list the current user’s credentials and permissions available to the user.
 
-mvn clean - cleans the maven project by deleting the target directory.
-mvn package - builds the maven project and packages them into a JAR, WAR, etc.
-mvn install - builds the maven project and installs the project files (JAR, WAR, pom.xml, etc) to the local repository.
-mvn deploy - o deploy the artifact to the remote repository.
-mvn validate - validates the maven project that everything is correct and all the necessary information is available.
-mvn test - is used to run the test cases of the project.
-mvn compile - to compile the source Java classes of the project.
-mvn verify - build the project, runs all the test cases and run any checks on the results of the integration tests to ensure quality criteria are met.
+The SOLID Principles are: Single Responsibility: each class should solve only one problem; Open Closed Principle: extend a class’s behavior without modifying it; Liskov Substitution: every derived class should be substitutable for its parent class; Interface Segregation: have many client-specific interfaces, avoiding one big, general-purpose interface; Dependency Inversion: high level modules should not depend upon low level modules.
 
-Jenkins commands
-stop - to stop Jenkins from command line.
-start - to start Jenkins from command line.
-restart  - to restart Jenkins from command line.
-build - allows the user to trigger any job or pipeline for which they have permission.
-console - retrieves the console output for the specified build or Pipeline run.
-who-am-i - to list the current user’s credentials and permissions available to the user.
+The different patterns and principles used in GRASP are: controller, creator, indirection, information expert, low coupling, high cohesion, polymorphism, protected variations, and pure fabrication; The GRASP principles are really a mental tool set, a learning aid to help in the design of object-oriented software.
 
-SOLID Principles
+The OPP Principles are: Encapsulation: access to private attributes and methods is not possible from outside the class as a way to ensure security (private keyword); Abstraction: for hiding the internal details or implementations of a function and showing its functionalities only, any class with at least one abstract function is an abstract class (abstract keyword); Inheritance: a child class inherits the attributes and methods of a parent class (extend keyword); Polymorphism: functions having the same names but carrying different functionalities (overriding and overloading).
 
-Single Responsibility: each class should solve only one problem.
-Open Closed Principle: extend a class’s behavior without modifying it.
-Liskov Substitution: every derived class should be substitutable for its parent class.
-Interface Segregation: have many client-specific interfaces, avoiding one big, general-purpose interface.
-Dependency Inversion: high level modules should not depend upon low level modules.
+Listeners are TestNG annotations that literally listen to the events in a script and modify TestNG behaviour accordingly; these listeners are applied as interfaces in the code, for example, the most common usage of listeners occurs when taking a screenshot of a particular test that has failed along with the reason for its failure; listeners also help with logging and generating results; TestNG: IAnnotationTransformer, IExecutionListener, IHookable; Java: ActionListener, KeyListener, FocusListener, MouseListener.
 
-GRASP Principles
+Mocking is a process used in unit tests when the unit being tested has external dependencies; the purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies; Mocking libraries: Moq, NSubstitute, FakeItEasy.
 
-The different patterns and principles used in GRASP are controller, creator, indirection, information expert, low coupling, high cohesion, polymorphism, protected variations, and pure fabrication. The GRASP principles are really a mental tool set, a learning aid to help in the design of object-oriented software.
+Design patterns are programming language independent strategies for solving the common object-oriented design problems, that means, a design pattern represents an idea, not a particular implementation; by using the design patterns you can make your code more flexible, reusable and maintainable, it is the most important part because java internally follows design patterns; Behavioral: Singleton Pattern, Creational: Decorator Pattern, Structural: Iterator Pattern; we can apply a Singleton pattern on the Factory class or make the factory method static, this is one of the most widely used java design patterns.
 
-OPP Principles
+The difference between Lists and Sets is that a List is an ordered grouping of items that allows duplicates, whereas a Set is an unordered grouping of items with no duplicates allowed (usually); conceptually, we usually refer to an unordered grouping that allows duplicates as a Bag, and to an unordered grouping that doesn't allow duplicates as a Set.
 
-Encapsulation: access to private attributes and methods is not possible from outside the class as a way to ensure security. (private keyword)
-Abstraction: for hiding the internal details or implementations of a function and showing its functionalities only. Any class with at least one abstract function is an abstract class. (abstract keyword)
-Inheritance: a child class inherits the attributes and methods of a parent class. (extend keyword)
-Polymorphism: functions having the same names but carrying different functionalities.
+The difference between Array and Lists is that an Array can store elements of only one data type, but List can store the elements of different data types.
 
-What are Listeners
+A Java Map interface use the library java.util.Map and represents a mapping between a key and a value; each key is linked to a specific value; once stored in a Map, we can later look up the value using just the key; Map mapA = new HashMap(); Map mapB = new TreeMap();
 
-Listeners are TestNG annotations that literally “listen” to the events in a script and modify TestNG behaviour accordingly. These listeners are applied as interfaces in the code. For example, the most common usage of listeners occurs when taking a screenshot of a particular test that has failed along with the reason for its failure. Listeners also help with logging and generating results.
-TestNG: IAnnotationTransformer, IExecutionListener, IHookable
-Java: ActionListener, KeyListener, FocusListener, MouseListener
+String Buffer is a peer class of 'String' that provides much of the functionality of strings; String represents fixed-length, immutable character sequences, while StringBuffer represents growable and writable character sequences; StringBuffer may have characters and substrings inserted in the middle or appended to the end; if the Object value is not going to change we should use the String Class because a String object is immutable, but, if the Object value can change and will only be accessed from a single thread, we can use a StringBuilder because StringBuilder is unsynchronized; in case the Object value can change, and will be modified by multiple threads, we can use a StringBuffer because StringBuffer is synchronized.
 
-What is Mocking
+In order to convert an integer into String we con use: Integer i = new Integer(123); Integer.toString(123); i.toString(); String str = "" + 123;  StringBuilder sb = new StringBuilder(); // or StringBuffer, then sb.append(i);
 
-Mocking is a process used in unit tests when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies.
-Mocking libraries: Moq, NSubstitute, FakeItEasy
-
-What are Design Patterns
-
-Design patterns are programming language independent strategies for solving the common object-oriented design problems. That means, a design pattern represents an idea, not a particular implementation.
-By using the design patterns you can make your code more flexible, reusable and maintainable. It is the most important part because java internally follows design patterns.
-Behavioral: Singleton Pattern
-Creational: Decorator Pattern
-Structural: Iterator Pattern
-We can apply a Singleton pattern on the Factory class or make the factory method static. This is one of the most widely used java design patterns.
-
-Difference between Sets and Lists
-
-A List is an ordered grouping of items.
-A Set is an unordered grouping of items with no duplicates allowed (usually).
-Conceptually, we usually refer to an unordered grouping that allows duplicates as a Bag, and to an unordered grouping that doesn't allow duplicates as a Set.
-
-Difference between Array and Lists
-
-Array can store elements of only one data type, but List can store the elements of different data types.
-
-Java Map interface
-
-The java.util.Map, represents a mapping between a key and a value. Each key is linked to a specific value. Once stored in a Map, you can later look up the value using just the key.
-Map mapA = new HashMap();
-Map mapB = new TreeMap();
-
-String Buffer
-
-It is a peer class of String that provides much of the functionality of strings. String represents fixed-length, immutable character sequences, while StringBuffer represents growable and writable character sequences. StringBuffer may have characters and substrings inserted in the middle or appended to the end.
-
-If the Object value is not going to change use String Class because a String object is immutable.
-If the Object value can change and will only be accessed from a single thread, use a StringBuilder because StringBuilder is unsynchronized.
-In case the Object value can change, and will be modified by multiple threads, use a StringBuffer because StringBuffer is synchronized.
-
-Convert integer to string
-
-In case, we want to concatenate two integers or find out if an integer contains a digit.
-Integer.toString(123);
-i.toString();
-String str = "" + 123;
-Integer i = new Integer(123);
-    StringBuilder sb = new StringBuilder(); // or StringBuffer
-    sb.append(i);
+---------------------------------------------------------------------------------------
 
 What is Instantiation
 
